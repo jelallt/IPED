@@ -18,10 +18,10 @@ public class ClearFilterButton extends JButton {
     private String oneFilter = Messages.getString("App.ClearFilter");
     private String manyFilters = Messages.getString("App.ClearFilters");
 
-    private Color alertBackground = Color.RED;
-    private Color alertForeground = Color.WHITE;
-    private Color defaultBackground = this.getBackground();
-    private Color defaultForeground = this.getForeground();
+    private final Color alertBackground = new Color(200, 0, 0);
+    private final Color alertForeground = Color.WHITE;
+    private final Color defaultBackground = this.getBackground();
+    private final Color defaultForeground = this.getForeground();
 
     private List<ClearFilterListener> listeners = new ArrayList<>();
 
