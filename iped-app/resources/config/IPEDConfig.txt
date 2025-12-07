@@ -88,7 +88,7 @@ indexFileContents = true
 # You must configure at least host/port options in conf/ElasticSearchConfig.txt
 enableIndexToElasticSearch = false
 
-# Enable exporting files to MinIO object storage cluster.
+# Enables exporting files to MinIO object storage cluster.
 # You must configure at least host/port options in conf/MinIOConfig.txt
 enableMinIO = false
 
@@ -96,11 +96,13 @@ enableMinIO = false
 # OCR language dictionary and other advanced configurations can be found in conf/OCRConfig.txt.
 enableOCR = false
 
-# Enable audio transcription.
-# Default implementation uses VOSK transcription on local CPU (slow and not good accuracy).
-# You can change it to a local Facebook Wav2Vec2 implementation (slower on CPU, faster on GPU and good accuracy)
-# or remote Microsoft Azure or Google Cloud services (faster and good accuracy).
-# Configure it in conf/AudioTranscriptConfig.txt
+# Enables audio transcription.
+# Default implementation uses VOSK transcription on local CPU (faster but bad accuracy).
+# You can change the algorithm into conf/AudioTranscriptConfig.txt:
+# - Wav2Vec2 algorithm (slower and good accuracy)
+# - Whisper algorithm (much slower but better accuracy)
+# - Google Cloud (about $1.00 per hour cost)
+# - Microsoft Azure (about $1.00 per hour cost)
 enableAudioTranscription = false
 
 # Enables carving. "addUnallocated" must be enabled to scan unallocated space.
@@ -129,6 +131,11 @@ enableImageSimilarity = false
 # If enabled, you can search for faces from the analysis interface, check the options menu.
 enableFaceRecognition = false
 
+# Enables age estimation feature.
+# You may install python and some dependencies, see https://github.com/sepinf-inc/IPED/wiki/User-Manual#AgeEstimation
+# Advanced configuration options can be found in conf/AgeEstimationConfig.txt.
+enableAgeEstimation = false
+
 # Enables searching for crypto hardware wallets.
 enableSearchHardwareWallets = true
 
@@ -143,3 +150,8 @@ enableDocThumbs = false
 # Enables HTML report generation on automatic extractions or from selected items.
 # Generation settings can be modified in file "conf/HTMLReportConfig.txt"
 enableHTMLReport = true
+
+# Enables remote image classifier.
+# It performs classification of image and video files.
+# Advanced settings can be modified in file "conf/RemoteImageClassifierConfig.txt"
+enableRemoteImageClassifier = false
